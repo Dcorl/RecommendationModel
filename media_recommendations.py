@@ -21,7 +21,7 @@ def renderRecommendationsPage(dataset, selected_media,page):
 
     #If the recommendations are over, switch state to check results
     if st.session_state.recommendation_number >= len(similar_media):
-        st.session_state.page = "Check Results"
+        st.session_state.page = "Model Analysis"
         st.rerun()
 
     #Page Title
