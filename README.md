@@ -37,8 +37,8 @@ No database management system is required; instead, a CSV dataset is sufficient.
 
 ## User Guide
 
-### Steps to run
-1. Download or clone the repo
+### Steps to run (Zip File)
+1. Download the repository as zip file.
 
 2. Unzip the project to create a folder for the project from the Zip file.
 
