@@ -11,6 +11,9 @@ A content-based recommendation system that suggests similar movies and TV shows 
 - Streamlit
 - Pandas
 - Scikit-learn
+- Matplotlib
+- Seaborn
+- Squarify
 
 ### Hardware
 - Device: iMac
@@ -48,6 +51,9 @@ No database management system is required; instead, a CSV dataset is sufficient.
 - pip install streamlit
 - pip install pandas
 - pip install -U scikit-learn
+- pip install matplotlib
+- pip install seaborn
+- pip install squarify
 
 
 6. To run the project, open the IDE terminal in the project's root directory and run this command
