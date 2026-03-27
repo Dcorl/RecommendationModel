@@ -4,6 +4,7 @@ from media_selection import renderSelectionPage
 from about_selected_media import renderAboutSelectedMediaPage
 from media_recommendations import renderRecommendationsPage
 from model_analysis import renderModelAnalysisPage
+from descriptive_analysis import renderDescriptiveAnalysisPage
 
 #Importing Dataset Containing Movies & TV Shows
 media_dataset = pd.read_csv('dataset/movies_and_tv_shows_dataset.csv')
@@ -33,3 +34,5 @@ elif st.session_state.page == "Model Analysis":
     renderModelAnalysisPage(
         st.session_state.responses, st.session_state.page
     )
+elif st.session_state.page == "Descriptive Analysis":
+        renderDescriptiveAnalysisPage(media_dataset, st.session_state.page)

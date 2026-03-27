@@ -45,3 +45,7 @@ def renderModelAnalysisPage(responses, page):
             <div class="response-container">
                 {response_html}
             </div> """, unsafe_allow_html=True)
+
+    if st.button("Get Descriptive Analysis"):
+        st.session_state.page = "Descriptive Analysis"
+        st.rerun()
