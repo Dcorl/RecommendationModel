@@ -1,0 +1,40 @@
+# Movie & TV Show Recommendation Model — runtime dependencies
+#
+# Python 3.12 or newer.
+#
+# Install:  pip install -r requirements.txt
+# Run:      streamlit run main.py   (from the project root)
+#
+# These are minimum-version floors, not pins. For a reproducible environment,
+# freeze a lockfile after a known-good install:
+#     pip freeze > requirements.lock.txt
+# This matters more than usual here: the page styling in css/ targets Streamlit's
+# internal CSS class names, so a Streamlit upgrade can change the app's appearance
+# without raising an error. See docs/ENGINEERING.md.
+
+# Web UI and server.
+# >=1.52.0 is a HARD requirement, not a preference:
+#   media_selection.py calls st.container(width="content").
+#   < 1.48.0        -> TypeError, 'width' is not a parameter of st.container
+#   1.48.0 - 1.51.x -> StreamlitInvalidWidthError, "content" is not an accepted width
+#   >= 1.52.0       -> works
+# The selection page is the app's entry point, so older versions fail on first render.
+streamlit>=1.52.0
+
+# CSV loading, DataFrame lookups, response aggregation.
+pandas>=2.0
+
+# TfidfVectorizer and cosine_similarity — the entire recommendation model.
+scikit-learn>=1.4
+
+# Figures for the descriptive analysis page (treemap, pie chart).
+matplotlib>=3.8
+
+# Colour palette for the treemap.
+seaborn>=0.13
+
+# Treemap layout algorithm.
+squarify>=0.4.3
+
+# numpy is used indirectly and arrives transitively via pandas and scikit-learn;
+# it is intentionally not declared here.
