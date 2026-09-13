@@ -16,6 +16,7 @@ descriptive breakdown of the underlying catalogue.
 | Document | What it covers |
 | --- | --- |
 | **README.md** (this file) | Overview, quickstart, project layout |
+| [docs/recommendation-model-explorer.html](docs/recommendation-model-explorer.html) | **Interactive visual guide** — the whole documentation set as diagrams, charts and drilldowns. Download it and open in a browser; it works offline and loads nothing |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | System design, routing, data flow, module boundaries, design decisions |
 | [docs/MODEL.md](docs/MODEL.md) | The recommendation algorithm, feature engineering, complexity, evaluation, limitations |
 | [docs/DATA.md](docs/DATA.md) | Dataset schema, provenance, profile, quality notes, licensing |
@@ -23,6 +24,18 @@ descriptive breakdown of the underlying catalogue.
 | [docs/INFRASTRUCTURE.md](docs/INFRASTRUCTURE.md) | Runtime requirements, resource footprint, deployment, operations runbook |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose and land changes |
 | [CHANGELOG.md](CHANGELOG.md) | Release history |
+
+### Start with the visual explorer
+
+[`docs/recommendation-model-explorer.html`](docs/recommendation-model-explorer.html) presents the
+same material as the markdown documents, but as an interactive page: a clickable system map, the
+model pipeline with its real memory figures, the page-flow state machine, the measured genre
+distribution, and all eleven findings filterable by severity. Every claim carries an evidence label
+and links back to the file and line it came from.
+
+Open it by downloading the file and double-clicking it. It is a single self-contained file — no
+companion assets, no network access, no build step. Viewing it through a source-hosting preview
+will not run its scripts, so the tabs and drilldowns will not work there.
 
 ---
 

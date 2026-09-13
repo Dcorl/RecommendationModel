@@ -12,6 +12,13 @@ commit history.
 
 ### Added
 
+- [`docs/recommendation-model-explorer.html`](docs/recommendation-model-explorer.html) — an
+  interactive visual companion to the documentation set. A single self-contained page with seven
+  tabs (Overview, Architecture, Workflows, Data, Model, Findings, Reference), seven hand-authored
+  SVG diagrams, two measured charts, clickable module and pipeline drilldowns, a severity filter
+  over the findings, and a searchable citation index. Every substantive claim carries an evidence
+  label — Measured, Source verified, Upstream verified, Derived or Proposed — and links to the file
+  and line behind it. Works offline; loads nothing from the network
 - Documentation set:
   - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — system design, module map, routing,
     data flow, design decisions, quality attributes, and a target architecture
