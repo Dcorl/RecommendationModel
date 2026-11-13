@@ -6,11 +6,11 @@ def model_analysis_css():
         """
         <style>
         /*Main container*/
-        .st-emotion-cache-1w723zb {
+        [data-testid="stMainBlockContainer"] {
             max-width: 1000px;
         }
         /*Page Heading*/
-        .st-emotion-cache-nl76d5 h1 {
+        [data-testid="stMainBlockContainer"] h1 {
                 text-align: center;
                 padding-bottom: 50px;
         }

@@ -44,7 +44,8 @@ def renderSelectionPage(page):
         for col_idx, media in enumerate(chunk):
             #Creating Rows From Columns
             with row[col_idx]:
-                with st.container(border=False, width="content"):
+                #The key adds a stable "st-key-media_card_N" class the CSS can target
+                with st.container(border=False, width="content", key=f"media_card_{i + col_idx}"):
                     st.image(media["Image"])
                     if st.button(media["Title"]):
                         #Saving the selected Media

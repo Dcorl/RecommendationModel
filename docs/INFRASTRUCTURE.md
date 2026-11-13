@@ -62,9 +62,10 @@ raises on first render against anything older. Full breakdown in
 
 ### Version drift risk
 
-`requirements.txt` sets floors, not pins. Because the page styling depends on Streamlit's
-internal Emotion class hashes ([issue 1](ENGINEERING.md#1-css-targets-streamlits-internal-class-names)),
-a Streamlit upgrade can silently change the app's appearance while every test still passes.
+`requirements.txt` sets floors, not pins. The page styling now targets stable `data-testid` and
+`st-key-*` hooks ([issue 1](ENGINEERING.md#1-css-targets-streamlits-internal-class-names)), so
+upgrades are much less risky than before, but a new Streamlit release can still change layout
+details without any test failing.
 
 **Recommendation:** freeze a lockfile for any environment where appearance matters.
 
@@ -328,13 +329,14 @@ value `"content"`.
 
 ### Symptom: the page loads but looks unstyled — wrong widths, default button colours
 
-**Cause:** Streamlit's internal Emotion CSS class hashes changed in an upgrade, so the
-selectors in `css/` no longer match anything. **No error is raised.**
+**Cause:** a selector in `css/` no longer matches anything. **No error is raised.** The usual
+culprit is a `.st-emotion-cache-*` class hash, which changes between Streamlit releases; `css/`
+should contain none of those.
 
 **Fix (immediate):** reinstall the previously working Streamlit version.
 
-**Fix (proper):** re-derive the selectors against the new version, or migrate to `data-testid`
-selectors. See [ENGINEERING.md](ENGINEERING.md#1-css-targets-streamlits-internal-class-names).
+**Fix (proper):** find the rule that stopped matching and point it at a `data-testid` attribute
+or a `st-key-*` class instead. See [ENGINEERING.md](ENGINEERING.md#1-css-targets-streamlits-internal-class-names).
 
 ---
 

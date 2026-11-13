@@ -36,6 +36,14 @@ commit history.
   the loose `pip install` list that previously lived only in the README
 - This changelog
 
+### Fixed
+
+- Page styling works again on current Streamlit releases. Every `.st-emotion-cache-*` selector
+  in `css/` (which stopped matching after Streamlit upgrades, leaving pages unstyled) is replaced
+  with stable `data-testid` attribute selectors, plus `st-key-media_card_*` classes from a new
+  `key=` on each selection page card. Restores the black poster cards, red buttons, centred
+  headings, and page widths. Verified on Streamlit 1.67.0
+
 ### Changed
 
 - [`README.md`](README.md) rewritten: adds a documentation index, project layout, an

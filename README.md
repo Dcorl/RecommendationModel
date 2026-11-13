@@ -183,5 +183,4 @@ Recorded for reproducibility. The project is not tied to this hardware or OS.
 
 This is a demonstration / portfolio project. Before treating it as production software,
 read [docs/ENGINEERING.md](docs/ENGINEERING.md#5-known-issues-and-technical-debt) — in
-particular the recommendation model is recomputed from scratch on every interaction, and the
-page styling is pinned to Streamlit's internal, unstable CSS class names.
+particular the recommendation model is recomputed from scratch on every interaction.
