@@ -2,46 +2,55 @@ import streamlit as st
 def movie_section_css():
     st.markdown(
         """
-        <style>   
+        <style>
+        /* Selectors use Streamlit's data-testid attributes and the st-key-* classes
+           added by keyed containers. Both are stable across Streamlit releases,
+           unlike the generated .st-emotion-cache-* class names. */
+
         /*Page Heading*/
-        .st-emotion-cache-nl76d5 h1 {
+        [data-testid="stMainBlockContainer"] h1 {
             text-align: center;
         }
 
         /* Sets the maximum width of the main application container */
-        .st-emotion-cache-1w723zb {
+        [data-testid="stMainBlockContainer"] {
             max-width: 1200px;
         }
 
+        /* Creates gap for spacing of rows for movie container */
+        [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] {
+            gap: 2rem;
+        }
+
+        /*Movie cell background & border*/
+        [data-testid="stColumn"]:has([class*="st-key-media_card_"]) {
+            background: black;
+            border: 1px solid rgb(0 0 0 / 20%);
+        }
+
+        /*Cell Container*/
+        [class*="st-key-media_card_"] {
+            width: 90%;
+            align-items: center;
+        }
+
         /* Aligns & centers text in movie containers */
-        .st-emotion-cache-1xhhvks p{
+        [class*="st-key-media_card_"] p {
             text-align: center;
             font-size: larger;
         }
 
-        /* Creates gap for spacing of rows for movie container */
-        .st-emotion-cache-tn0cau {
-            gap: 2rem
-        }
-        /*Cell Container*/
-        .st-emotion-cache-1n6tfoc {
-            width: 90%;
-            align-items: center;
-        }
-        /*Movie cell background & border*/
-        .st-emotion-cache-1gz5zxc {
-            background: black;
-            border: 1px solid rgb(0 0 0 / 20%)
-        }
-        /*Mvoie Cell Images*/
-        .st-emotion-cache-7czcpc {
+        /*Movie Cell Images*/
+        [class*="st-key-media_card_"] [data-testid="stImageContainer"],
+        [class*="st-key-media_card_"] [data-testid="stImageContainer"] img {
             border-radius: 0.8rem;
         }
-        /*Movie cell button*/
-        .st-emotion-cache-1anq8dj{
-            width: 250px;
-            background: #780000;
 
+        /*Movie cell button*/
+        [class*="st-key-media_card_"] [data-testid="stBaseButton-secondary"] {
+            width: 250px;
+            max-width: 100%;
+            background: #780000;
         }
         </style>
         """,

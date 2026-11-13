@@ -58,8 +58,8 @@ There is no CI and no test suite yet, so verification is manual. Work through th
 - [ ] All five pages render correctly, not just the one you changed
 - [ ] Note the Streamlit version you verified against in the pull request description
 
-Styling is coupled to Streamlit's internal class names, so "it looks right on my machine" is
-version-specific information worth recording.
+The styling uses stable hooks, but Streamlit can still change layout details between
+releases, so "it looks right on my machine" is version-specific information worth recording.
 
 ### If you touched the model
 
@@ -100,9 +100,11 @@ Those class names are Streamlit-generated content hashes that change between rel
 1. Author-defined classes on `<div>`s this codebase emits — the pattern already used by
    `.media-title`, `.accuracy`, `.response-container`.
 2. `data-testid` attribute selectors for Streamlit internals, e.g.
-   `[data-testid="stAppViewContainer"]`.
+   `[data-testid="stMainBlockContainer"]`.
+3. A `key=` on the Streamlit element, then target the `st-key-<key>` class Streamlit adds
+   (see `media_selection.py`, which keys each card as `media_card_<n>`).
 
-Adding new Emotion-hash selectors deepens an existing problem. See
+`css/` currently contains no Emotion-hash selectors. Keep it that way. See
 [docs/ENGINEERING.md](docs/ENGINEERING.md#1-css-targets-streamlits-internal-class-names).
 
 ### Escape interpolated data

@@ -4,18 +4,18 @@ def about_media_css():
         """
         <style>
         /*Page Heading*/
-        .st-emotion-cache-nl76d5 h1 {
+        [data-testid="stMainBlockContainer"] h1 {
             text-align: center;
             padding-bottom: 80px;
         }
 
         /*Media Details Container*/
-        .st-emotion-cache-1w723zb {
+        [data-testid="stMainBlockContainer"] {
             max-width: 1000px;
         }
 
         /*Media image*/
-        .st-emotion-cache-7czcpc > img  {
+        [data-testid="stImageContainer"] > img  {
             max-width: 90% !important;
         }
 

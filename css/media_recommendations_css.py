@@ -4,12 +4,12 @@ def media_recommendations_css():
     st.markdown("""
         <style>
         /*Main Container*/
-        .st-emotion-cache-1w723zb {
+        [data-testid="stMainBlockContainer"] {
             max-width: 900px !important;
         }
 
         /*Page Heading*/
-        .st-emotion-cache-nl76d5 h1 {
+        [data-testid="stMainBlockContainer"] h1 {
             padding-bottom: 50px;
         }
 
@@ -28,7 +28,7 @@ def media_recommendations_css():
         }
 
         /*Button Width*/
-        .st-emotion-cache-1anq8dj {
+        [data-testid="stBaseButton-secondary"] {
             width: 200px !important;
         }
         </style>
