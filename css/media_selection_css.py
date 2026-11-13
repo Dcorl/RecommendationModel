@@ -28,10 +28,11 @@ def movie_section_css():
             border: 1px solid rgb(0 0 0 / 20%);
         }
 
-        /*Cell Container*/
+        /*Cell Container: centred horizontally within its column*/
         [class*="st-key-media_card_"] {
             width: 90%;
             align-items: center;
+            align-self: center;
         }
 
         /* Aligns & centers text in movie containers */
